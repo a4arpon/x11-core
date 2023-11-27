@@ -1,15 +1,28 @@
-export function slugGenerator(title) {
-  return title.toLowerCase().replace(/ /g, '-')
-}
-
-export function expressErrorHandler() {
-  return function (err, req, res, next) {
-    console.error(err.stack)
-    res.status(500).send('Something broke!')
+export function formatMongoDate(mongoDate) {
+  const options = {
+    hour: '2-digit',
+    minute: '2-digit',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    hour12: true,
   }
+
+  const formattedDate = new Intl.DateTimeFormat('en-US', options).format(
+    new Date(mongoDate)
+  )
+
+  return formattedDate
 }
 
-export function requestLogger(req, res, next) {
-  console.log('Request URL:', req.originalUrl)
-  next()
-}
+
+export const slugGenerator = (text) => {
+  const slug = text
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-{2,}/g, "-");
+
+  return slug;
+};
