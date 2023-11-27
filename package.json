@@ -1,10 +1,20 @@
 {
-  "name": "X11-Core",
+  "name": "x11-core",
   "version": "0.0.1",
   "description": "Empower enterprise-grade development with a versatile JavaScript functions library, a comprehensive toolkit for daily life coding challenges. Boost efficiency, streamline workflows, and elevate your projects with essential functions.",
   "main": "app.js",
   "repository": "https://github.com/a4arpon/x11-core.git",
+  "bugs": {
+    "url": "https://github.com/a4arpon/x11-core/issues"
+  },
+  "homepage": "https://github.com/a4arpon/x11-core#readme",
   "author": "Mr. Wayne",
   "license": "GPL-3",
-  "private": false
+  "private": false,
+  "keywords": [
+    "javascript",
+    "functions",
+    "enterprise",
+    "library"
+  ]
 }
